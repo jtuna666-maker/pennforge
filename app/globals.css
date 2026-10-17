@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — copy lives in lib/site-config.ts; colors live here */
+  --color-navy-950: #0b1424;
+  --color-navy-900: #15243a;
+  --color-navy-800: #1e3454;
+  --color-navy-700: #2b476e;
+
+  --color-forge-700: #c2570b;
+  --color-forge-600: #ea6a0a;
+  --color-forge-500: #f97316;
+  --color-forge-400: #fb923c;
+  --color-forge-100: #ffedd5;
+
+  --color-cream: #f8fafc;
+  --color-mist: #94a3b8;
+
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.9);
+      opacity: 0;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy-950);
+  color: #cbd5e1;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible, visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-forge-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--color-forge-500);
+  color: #fff;
+}
+
+/* Subtle blueprint grid used behind hero / CTA sections */
+.bg-blueprint {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
