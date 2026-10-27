@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle2, MapPin, Play, RotateCcw, Wrench } from "lucide-react";
-import { ctaLabels, demoCall } from "@/lib/site-config";
+import { CheckCircle2, MapPin, Phone, Play, RotateCcw, Wrench } from "lucide-react";
+import { contact, ctaLabels, demoCall } from "@/lib/site-config";
 import { useDemoModal } from "./demo-modal-context";
 import { Reveal } from "./Reveal";
 
@@ -138,7 +138,7 @@ export function DemoPreview() {
               </div>
             </dl>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-start gap-3">
               <button
                 type="button"
                 onClick={openDemo}
@@ -146,6 +146,14 @@ export function DemoPreview() {
               >
                 {ctaLabels.bookFreeDemo}
               </button>
+              <a
+                href={contact.phoneHref}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/10"
+              >
+                <Phone size={18} className="text-forge-400" aria-hidden="true" />
+                Hear Lucy live — {contact.phone}
+              </a>
+              <p className="text-sm text-mist">Call now and talk to the real AI receptionist.</p>
             </div>
           </Reveal>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { brand, contact, legal, navLinks } from "@/lib/site-config";
 import { Logo } from "./Logo";
 
@@ -23,13 +23,22 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">{brand.tagline}</p>
-            <a
-              href={`mailto:${contact.email}`}
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"
-            >
-              <Mail size={15} className="text-forge-400" aria-hidden="true" />
-              {contact.email}
-            </a>
+            <div className="mt-5 flex flex-col items-start gap-2">
+              <a
+                href={`mailto:${contact.email}`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"
+              >
+                <Mail size={15} className="text-forge-400" aria-hidden="true" />
+                {contact.email}
+              </a>
+              <a
+                href={contact.phoneHref}
+                className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"
+              >
+                <Phone size={15} className="text-forge-400" aria-hidden="true" />
+                {contact.phone}
+              </a>
+            </div>
           </div>
 
           <nav aria-label="Product">

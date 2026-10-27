@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { ctaLabels, navLinks } from "@/lib/site-config";
+import { contact, ctaLabels, navLinks } from "@/lib/site-config";
 import { useDemoModal } from "./demo-modal-context";
 
 /**
@@ -40,6 +40,15 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
+      <div className="border-b border-white/10 bg-navy-950 px-4 py-2 text-center text-sm font-semibold text-white">
+        <a href={contact.phoneHref} className="hover:text-forge-400">
+          Call {contact.phone}
+        </a>
+        <span className="mx-3 text-slate-500" aria-hidden="true">·</span>
+        <a href={`mailto:${contact.email}`} className="text-forge-400 hover:text-white">
+          {contact.email}
+        </a>
+      </div>
       <nav
         aria-label="Primary"
         className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"

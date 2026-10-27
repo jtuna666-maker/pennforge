@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, BadgeCheck, PhoneIncoming } from "lucide-react";
-import { ctaLabels, hero } from "@/lib/site-config";
+import { contact, ctaLabels, hero } from "@/lib/site-config";
 import { useDemoModal } from "./demo-modal-context";
 
 const benefitIcons = [PhoneIncoming, BadgeCheck, BadgeCheck, BadgeCheck];
@@ -66,7 +66,20 @@ export function Hero() {
             {hero.subcopy}
           </motion.p>
 
-          <motion.div variants={fadeUp} custom={3} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <motion.p
+            variants={fadeUp}
+            custom={3}
+            className="mt-6 text-base font-semibold text-white"
+          >
+            Call <a href={contact.phoneHref} className="text-forge-400 hover:text-white">{contact.phone}</a>{" "}
+            or email{" "}
+            <a href={`mailto:${contact.email}`} className="text-forge-400 hover:text-white">
+              {contact.email}
+            </a>{" "}
+            for a free demo.
+          </motion.p>
+
+          <motion.div variants={fadeUp} custom={4} className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={openDemo}
@@ -85,7 +98,7 @@ export function Hero() {
 
           <motion.ul
             variants={fadeUp}
-            custom={4}
+            custom={5}
             className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7"
             aria-label="Key benefits"
           >

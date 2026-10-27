@@ -22,9 +22,11 @@ export const brand = {
 // ---------------------------------------------------------------------------
 export const contact = {
   /** Public contact email shown in footer / final CTA. */
-  email: "PennForge2026@gmail.com",
-  /** Optional phone number. Leave empty to hide phone references. */
-  phone: "",
+  email: "jesse@pennforge.app",
+  /** Public phone number (Lucy demo line + business contact). */
+  phone: "(570) 529-9998",
+  /** tel: link for the public number. */
+  phoneHref: "tel:+15705299998",
 } as const;
 
 export const legal = {
@@ -34,7 +36,7 @@ export const legal = {
 
 export const seo = {
   /** Update this when a custom production domain is connected. */
-  canonicalUrl: "https://pennforge-landing.vercel.app/",
+  canonicalUrl: "https://pennforge.app/",
   siteName: "PennForge",
 };
 
@@ -293,12 +295,11 @@ export const whyPennForge = {
 // ---------------------------------------------------------------------------
 // FAQ (Section J)
 // ---------------------------------------------------------------------------
-// Answers are qualified; business policies not yet decided are marked
-// [PLACEHOLDER] so they can be finalized before launch.
+// Approved answers (finalized Oct 2026).
 export const faqs = [
   {
     q: "Will PennForge work with my existing business phone number?",
-    a: "Yes — PennForge is designed to work with your existing business number so customers keep calling the number they already know. [PLACEHOLDER: confirm supported carriers / forwarding method during onboarding.]",
+    a: "Yes — through call forwarding. Customers keep calling the number they know; nothing to install.",
   },
   {
     q: "Can it answer calls after hours?",
@@ -322,15 +323,15 @@ export const faqs = [
   },
   {
     q: "How long does setup take?",
-    a: "Most businesses are up and running quickly once onboarding details are provided. [PLACEHOLDER: confirm typical setup timeline before launch.]",
+    a: "Up and running in 2–3 business days once onboarding is complete.",
   },
   {
     q: "Is there a contract or cancellation policy?",
-    a: "[PLACEHOLDER: finalize contract terms and cancellation policy before launch.]",
+    a: "Month-to-month, no long-term contract, cancel with 30 days' notice. The $99 setup is non-refundable, and unused minutes don't roll over.",
   },
   {
     q: "Will customers know they’re speaking with AI?",
-    a: "PennForge identifies itself appropriately and focuses on helping the caller. [PLACEHOLDER: confirm disclosure wording to match applicable regulations.]",
+    a: "It greets professionally and identifies as an AI receptionist where required by law.",
   },
 ] as const;
 

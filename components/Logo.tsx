@@ -16,7 +16,7 @@ export function Logo({ className = "" }: { className?: string }) {
         className="shrink-0"
       >
         <defs>
-          <linearGradient id="cf-mark" x1="4" y1="6" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+          <linearGradient id="pf-mark" x1="4" y1="6" x2="30" y2="28" gradientUnits="userSpaceOnUse">
             <stop stopColor="#FB923C" />
             <stop offset="1" stopColor="#EA6A0A" />
           </linearGradient>
@@ -24,7 +24,7 @@ export function Logo({ className = "" }: { className?: string }) {
         {/* Outer roof peak */}
         <path
           d="M5 23 L17 8 L29 23"
-          stroke="url(#cf-mark)"
+          stroke="url(#pf-mark)"
           strokeWidth="4.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -43,7 +43,7 @@ export function Logo({ className = "" }: { className?: string }) {
         className="font-display text-[1.35rem] font-extrabold tracking-tight text-white"
         style={{ fontFamily: "var(--font-archivo)" }}
       >
-        Call<span className="text-forge-500">Forge</span>
+        Penn<span className="text-forge-500">Forge</span>
       </span>
     </span>
   );
