@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a href="#demo" className="text-slate-400 hover:text-white">
-                  Interactive Demo
+                  Live Demo
                 </a>
               </li>
               <li>
