@@ -79,7 +79,16 @@ export function Hero() {
             for a free demo.
           </motion.p>
 
-          <motion.div variants={fadeUp} custom={4} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <motion.p
+            variants={fadeUp}
+            custom={4}
+            className="mt-3 text-sm leading-relaxed text-slate-400"
+          >
+            When you call, you'll reach Lucy, our AI receptionist — leave your
+            details and we'll get back to you promptly.
+          </motion.p>
+
+          <motion.div variants={fadeUp} custom={5} className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               type="button"
               onClick={openDemo}
@@ -98,7 +107,7 @@ export function Hero() {
 
           <motion.ul
             variants={fadeUp}
-            custom={5}
+            custom={6}
             className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7"
             aria-label="Key benefits"
           >
