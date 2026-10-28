@@ -17,8 +17,9 @@ const fadeUp = {
 };
 
 /**
- * Hero — split editorial layout. Left: eyebrow, headline, CTAs, benefits.
- * Right: layered phone mock (incoming call + AI status + lead capture).
+ * Hero — eyebrow, headline, CTAs, benefits.
+ * The phone-mock visual (incoming call + AI status + lead capture)
+ * was removed 2026-10-28, so the hero is copy only.
  */
 export function Hero() {
   const { openDemo } = useDemoModal();
@@ -32,7 +33,7 @@ export function Hero() {
         <div className="absolute top-1/3 -left-40 h-[380px] w-[380px] rounded-full bg-navy-700/50 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-16 sm:px-6 sm:pt-20 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:px-8 lg:pt-24 lg:pb-24">
+      <div className="relative mx-auto max-w-7xl px-4 pt-14 pb-16 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24 lg:pb-24">
         {/* Copy */}
         <motion.div
           initial={reduceMotion ? undefined : "hidden"}
@@ -84,8 +85,8 @@ export function Hero() {
             custom={4}
             className="mt-3 text-sm leading-relaxed text-slate-400"
           >
-            When you call, you'll reach Lucy, our AI receptionist — leave your
-            details and we'll get back to you promptly.
+            When you call, you will reach Lucy, our AI receptionist — leave your
+            details and we will get back to you promptly.
           </motion.p>
 
           <motion.div variants={fadeUp} custom={5} className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -121,76 +122,6 @@ export function Hero() {
               );
             })}
           </motion.ul>
-        </motion.div>
-
-        {/* Visual composition */}
-        <motion.div
-          initial={reduceMotion ? undefined : { opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-14 lg:mt-0"
-          aria-hidden="true"
-        >
-          <div className="relative mx-auto max-w-[420px]">
-            {/* Phone frame */}
-            <div className="animate-float rounded-[2.2rem] border border-white/15 bg-navy-900/90 p-3 shadow-2xl shadow-black/60 backdrop-blur">
-              <div className="rounded-[1.7rem] bg-navy-950 px-5 pt-8 pb-6">
-                {/* Incoming call */}
-                <div className="text-center">
-                  <p className="text-[11px] font-semibold tracking-[0.2em] text-mist uppercase">
-                    Incoming call
-                  </p>
-                  <div className="relative mx-auto mt-5 h-20 w-20">
-                    <span className="animate-pulse-ring absolute inset-0 rounded-full bg-forge-500/50" />
-                    <span
-                      className="animate-pulse-ring absolute inset-0 rounded-full bg-forge-500/30"
-                      style={{ animationDelay: "1.2s" }}
-                    />
-                    <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-forge-400 to-forge-600 text-xl font-bold text-white">
-                      SM
-                    </span>
-                  </div>
-                  <p className="mt-4 text-lg font-semibold text-white">Sarah Mitchell</p>
-                  <p className="text-sm text-mist">Summit Ridge Plumbing line</p>
-                  <div className="mt-5 flex justify-center gap-6">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-red-500/90 shadow-lg">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.7 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.7 2.11L8.09 9.91" transform="rotate(135 12 12)"/></svg>
-                    </span>
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/40">
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.7 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.7 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* AI status pill */}
-            <div className="animate-float-slow absolute -top-4 -right-3 flex items-center gap-2 rounded-full border border-emerald-400/30 bg-navy-900/95 px-4 py-2 shadow-xl backdrop-blur sm:-right-8">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              </span>
-              <span className="text-xs font-semibold text-white">AI Receptionist · Answering</span>
-            </div>
-
-            {/* Lead capture card */}
-            <div className="animate-float-slow absolute -bottom-8 -left-3 w-64 rounded-2xl border border-white/10 bg-navy-900/95 p-4 shadow-2xl backdrop-blur sm:-left-10" style={{ animationDelay: "1.4s" }}>
-              <p className="text-[11px] font-semibold tracking-[0.16em] text-mist uppercase">
-                Lead captured
-              </p>
-              <ul className="mt-2 space-y-1.5 text-sm">
-                <li className="flex items-center gap-2 text-slate-200">
-                  <BadgeCheck size={15} className="shrink-0 text-emerald-400" /> Sarah Mitchell
-                </li>
-                <li className="flex items-center gap-2 text-slate-200">
-                  <BadgeCheck size={15} className="shrink-0 text-emerald-400" /> (570) 555-0148
-                </li>
-                <li className="flex items-center gap-2 text-slate-200">
-                  <BadgeCheck size={15} className="shrink-0 text-emerald-400" /> Leaking water heater
-                </li>
-              </ul>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
