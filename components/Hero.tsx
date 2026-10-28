@@ -85,8 +85,8 @@ export function Hero() {
             custom={4}
             className="mt-3 text-sm leading-relaxed text-slate-400"
           >
-            When you call, you will reach Lucy, our AI receptionist — leave your
-            details and we will get back to you promptly.
+            When you call, you&apos;ll reach Lucy, our AI receptionist — leave your
+            details and we&apos;ll get back to you promptly.
           </motion.p>
 
           <motion.div variants={fadeUp} custom={5} className="mt-8 flex flex-col gap-3 sm:flex-row">
