@@ -7,12 +7,15 @@ import { useDemoModal } from "./demo-modal-context";
 
 const benefitIcons = [PhoneIncoming, BadgeCheck, BadgeCheck, BadgeCheck];
 
+// No entrance fade: the hero must be visible on first paint, not held
+// back until JS hydration runs the animation (that staged fade is what
+// made the site feel slow to render).
 const fadeUp = {
-  hidden: { opacity: 0, y: 26 },
-  show: (i: number) => ({
+  hidden: { opacity: 1, y: 0 },
+  show: () => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0, delay: 0 },
   }),
 };
 
