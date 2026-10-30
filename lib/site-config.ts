@@ -30,8 +30,8 @@ export const contact = {
 } as const;
 
 export const legal = {
-  privacyPolicyUrl: "#", // TODO: replace with real Privacy Policy URL
-  termsOfServiceUrl: "#", // TODO: replace with real Terms of Service URL
+  privacyPolicyUrl: "/privacy-policy",
+  termsOfServiceUrl: "/terms-of-service",
 } as const;
 
 export const seo = {
