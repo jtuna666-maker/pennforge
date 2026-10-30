@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { brand, pricing, seo } from "@/lib/site-config";
+import { SiteWatermark } from "@/components/SiteWatermark";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <JsonLd />
+        <SiteWatermark />
         {children}
         <Analytics />
         <SpeedInsights />
