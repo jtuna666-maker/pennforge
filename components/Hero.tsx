@@ -7,12 +7,15 @@ import { useDemoModal } from "./demo-modal-context";
 const benefitIcons = [PhoneIncoming, BadgeCheck, BadgeCheck, BadgeCheck];
 
 /**
- * Hero — eyebrow, headline, CTAs, benefits. Copy only.
+ * Hero — eyebrow, headline, Call Lucy CTA card, CTAs, benefits. Copy only.
  * The truck visual and the fixed background watermark were both removed
  * 2026-10-30 at Jesse's decision ("Remove both, no truck background")
  * to speed up mobile loading: the truck was a ~167KB embedded image in
  * this file, and the watermark was a fixed element over every page.
  * No background image is used here.
+ * 2026-10-30 evening: the Call Lucy number was made the hero's second
+ * focal point (after the headline) as a large bordered card, because
+ * the old plain-text phone line blended in and was easy to skim past.
  */
 export function Hero() {
   const { openDemo } = useDemoModal();
@@ -45,19 +48,27 @@ export function Hero() {
             {hero.subcopy}
           </p>
 
-          <p className="mt-6 text-base font-semibold text-white">
-            Call <a href={contact.phoneHref} className="text-forge-400 hover:text-white">{contact.phone}</a>{" "}
-            or email{" "}
-            <a href={`mailto:${contact.email}`} className="text-forge-400 hover:text-white">
-              {contact.email}
-            </a>{" "}
-            for a free demo.
-          </p>
-
-          <p className="mt-3 text-sm leading-relaxed text-slate-400">
-            When you call, you&apos;ll reach Lucy, our AI receptionist — leave your
-            details and we&apos;ll get back to you promptly.
-          </p>
+          <div className="mt-8 rounded-2xl border-2 border-forge-500/60 bg-navy-900/70 p-5 shadow-lg shadow-forge-500/10 sm:p-6">
+            <p className="flex items-center gap-2 text-sm font-bold text-white">
+              <PhoneIncoming size={18} className="shrink-0 text-forge-400" aria-hidden="true" />
+              Call Lucy now to test her live
+            </p>
+            <a
+              href={contact.phoneHref}
+              aria-label={`Call Lucy now at ${contact.phone}`}
+              className="mt-2 block text-3xl font-black tracking-tight text-forge-400 hover:text-forge-300 sm:text-[2.75rem] sm:leading-none"
+            >
+              {contact.phone}
+            </a>
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">
+              Talk to Lucy herself — no script, no recording. Leave your details
+              and we&apos;ll get back to you promptly. Prefer email?{" "}
+              <a href={`mailto:${contact.email}`} className="font-semibold text-forge-400 hover:text-white">
+                {contact.email}
+              </a>{" "}
+              for a free demo.
+            </p>
+          </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
