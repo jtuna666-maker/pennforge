@@ -198,11 +198,6 @@ export const features = [
     title: "After-Hours Coverage",
     body: "Evening and weekend callers get the same professional greeting as midday ones.",
   },
-  {
-    icon: "Megaphone",
-    title: "Custom Greetings",
-    body: "Your business name, your tone — callers hear a greeting that sounds like you.",
-  },
 ] as const;
 
 // ---------------------------------------------------------------------------
