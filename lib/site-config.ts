@@ -253,7 +253,7 @@ export const pricing = {
     "Lead information capture",
     "Appointment request handling",
     "Call summaries and notifications",
-    "Custom greeting and basic call routing",
+    "Custom greeting wording and basic call routing",
   ] as string[],
   note: "Advanced integrations and specific capabilities are subject to onboarding configuration and platform support.",
 } as const;
@@ -310,7 +310,7 @@ export const faqs = [
   },
   {
     q: "Can I customize what the AI says?",
-    a: "Yes. Your greeting, business details, and how common questions are answered are all configured for your business during onboarding.",
+    a: "Yes. You choose the greeting wording and the answers to your common questions. The voice itself stays the same and does not sound like you; only the words she says are customized for your business.",
   },
   {
     q: "What happens if I exceed 500 minutes?",
