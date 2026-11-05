@@ -49,6 +49,7 @@ export const navLinks = [
   { label: "Industries", href: "#industries" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Start Onboarding", href: "/onboarding" },
 ] as const;
 
 export const ctaLabels = {

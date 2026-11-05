@@ -126,8 +126,8 @@ export default function PrivacyPolicy() {
         <section className="mt-10">
           <h2 className="text-xl font-bold text-white">4. Payments</h2>
           <p className="mt-3 leading-relaxed text-slate-300">
-            Payments are processed by our payment provider. PennForge does not
-            receive or store your full card number.
+            Payments are processed by Stripe, our payment provider. PennForge
+            does not receive or store your full card number.
           </p>
         </section>
 

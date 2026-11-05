@@ -85,6 +85,12 @@ export function Hero() {
             >
               {ctaLabels.seeHowItWorks}
             </a>
+            <a
+              href="/onboarding"
+              className="inline-flex items-center justify-center rounded-xl border border-forge-500/50 bg-forge-500/10 px-7 py-3.5 text-base font-semibold text-forge-400 transition-colors hover:border-forge-400 hover:bg-forge-500/20"
+            >
+              Start Onboarding
+            </a>
           </div>
 
           <ul
