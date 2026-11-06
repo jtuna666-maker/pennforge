@@ -1,11 +1,8 @@
-// READY TO PUSH — PennForge /onboarding page (drop into repo at app/onboarding/page.tsx)
-// Changes from the staged draft:
-// - Client component: submits JSON to /api/onboarding (new route, mirrors /api/demo-request)
-//   instead of a plain HTML form POST, which the JSON route would reject.
-// - Stripe step is on the SUCCESS screen: fill in the form, submit, then pay
-//   via the live Payment Link. Jesse onboards only after payment clears.
-// - STRIPE_PAYMENT_LINK_HREF below is a placeholder — replace with the LIVE
-//   Stripe Payment Link URL before pushing. Do NOT push with the placeholder.
+// PennForge /onboarding page — app/onboarding/page.tsx
+// Dark theme: site background is navy #0B1424, so page text is light.
+// Form inputs stay white with dark text so typed text and placeholders read clearly.
+// "How it works" box stays light (bg-slate-50) with dark text — it was the only readable block before this fix.
+// Stripe step is on the SUCCESS screen: fill in the form, submit, then pay via the live Payment Link.
 "use client";
 
 import { useState } from "react";
@@ -38,8 +35,8 @@ export default function OnboardingPage() {
   const [error, setError] = useState("");
 
   const inputClass =
-    "w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900";
-  const labelClass = "block text-sm font-semibold text-slate-800 mb-1";
+    "w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 placeholder:text-slate-400";
+  const labelClass = "block text-sm font-semibold text-slate-200 mb-1";
 
   const set =
     (key: keyof typeof values) =>
@@ -77,10 +74,10 @@ export default function OnboardingPage() {
   if (status === "success") {
     return (
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-3xl font-bold text-slate-900">
+        <h1 className="text-3xl font-bold text-white">
           Details received — one step left
         </h1>
-        <p className="mt-3 text-slate-700">
+        <p className="mt-3 text-slate-300">
           Thanks — your onboarding details are with Jesse. To start your
           service, complete payment now: $99 one-time setup + your first
           $299/month.
@@ -93,7 +90,7 @@ export default function OnboardingPage() {
         >
           Pay $99 setup + $299/month with Stripe
         </a>
-        <p className="mt-4 text-sm text-slate-500">
+        <p className="mt-4 text-sm text-slate-400">
           PennForge is month-to-month, $299/month, 500 AI minutes included,
           $0.20/minute overage. Setup is in 2–3 business days once onboarding
           and payment are complete. Questions? Call Lucy at{" "}
@@ -112,8 +109,8 @@ export default function OnboardingPage() {
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-slate-900">Start Onboarding</h1>
-      <p className="mt-3 text-slate-700">
+      <h1 className="text-3xl font-bold text-white">Start Onboarding</h1>
+      <p className="mt-3 text-slate-300">
         Tell us about your business and how you want calls handled, and
         we&apos;ll get you set up in 2–3 business days once onboarding and
         payment are complete.
@@ -154,7 +151,7 @@ export default function OnboardingPage() {
 
       <form onSubmit={onSubmit} className="mt-8 space-y-6">
         <section>
-          <h2 className="text-xl font-semibold">Your business</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Your business</h2>
           <div className="mt-3 space-y-4">
             <div>
               <label className={labelClass} htmlFor="businessName">Business name *</label>
@@ -185,7 +182,7 @@ export default function OnboardingPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold">Your contact</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Your contact</h2>
           <div className="mt-3 space-y-4">
             <div>
               <label className={labelClass} htmlFor="contactName">Your name *</label>
@@ -203,7 +200,7 @@ export default function OnboardingPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold">Your phone number</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Your phone number</h2>
           <div className="mt-3 space-y-4">
             <div>
               <label className={labelClass} htmlFor="currentNumber">Current business number *</label>
@@ -222,7 +219,7 @@ export default function OnboardingPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold">Hours &amp; call handling</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Hours &amp; call handling</h2>
           <div className="mt-3 space-y-4">
             <div>
               <label className={labelClass} htmlFor="hours">Business hours *</label>
@@ -235,7 +232,7 @@ export default function OnboardingPage() {
             <div>
               <label className={labelClass} htmlFor="greeting">Greeting wording you want</label>
               <textarea className={inputClass} id="greeting" name="greeting" rows={2} placeholder="e.g. Thanks for calling [Business Name], how can I help?" value={values.greeting} onChange={set("greeting")} />
-              <p className="mt-1 text-xs text-slate-500">
+              <p className="mt-1 text-xs text-slate-400">
                 This is wording only — the voice stays the same, it does not sound like you.
               </p>
             </div>
@@ -247,7 +244,7 @@ export default function OnboardingPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold">Appointments, transfers &amp; messages</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Appointments, transfers &amp; messages</h2>
           <div className="mt-3 space-y-4">
             <div>
               <label className={labelClass} htmlFor="scheduling">How does scheduling work for you?</label>
@@ -265,12 +262,12 @@ export default function OnboardingPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold">Anything else?</h2>
+          <h2 className="text-xl font-semibold text-slate-100">Anything else?</h2>
           <div className="mt-3">
             <label className={labelClass} htmlFor="notes">Notes for Jesse</label>
             <textarea className={inputClass} id="notes" name="notes" rows={3} value={values.notes} onChange={set("notes")} />
           </div>
-          <label className="mt-4 flex items-start gap-2 text-sm text-slate-700">
+          <label className="mt-4 flex items-start gap-2 text-sm text-slate-300">
             <input type="checkbox" name="termsAck" required className="mt-1" checked={termsAck} onChange={(e) => setTermsAck(e.target.checked)} />
             <span>
               I understand PennForge is month-to-month, $299/month + $99 setup,
@@ -308,7 +305,7 @@ export default function OnboardingPage() {
         >
           {status === "submitting" ? "Sending…" : "Submit onboarding details"}
         </button>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-400">
           Questions first? Call Lucy live at{" "}
           <a href="tel:+15705299998" className="underline">(570) 529-9998</a>{" "}
           or email{" "}
