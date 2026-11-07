@@ -22,6 +22,8 @@ type OnboardingBody = {
   scheduling?: unknown;
   transferRules?: unknown;
   messageDestination?: unknown;
+  heardAbout?: unknown;
+  referredBy?: unknown;
   notes?: unknown;
   termsAck?: unknown;
   company_website?: unknown; // honeypot
@@ -59,6 +61,8 @@ function validate(body: OnboardingBody): string[] {
     "currentNumber",
     "numberChoice",
     "messageDestination",
+    "heardAbout",
+    "referredBy",
   ] as const) {
     if (str(body[field]).length > 200) errors.push(`${field} is too long.`);
   }
@@ -137,6 +141,9 @@ export async function POST(req: NextRequest) {
     `Scheduling: ${str(body.scheduling) || "Not provided"}`,
     `Transfer rules: ${str(body.transferRules) || "Not provided"}`,
     `Call summaries to: ${str(body.messageDestination)}`,
+    "",
+    `How they found us: ${str(body.heardAbout) || "Not provided"}`,
+    `Referred by: ${str(body.referredBy) || "Not provided"}`,
     "",
     "Notes for Jesse:",
     str(body.notes) || "Not provided",

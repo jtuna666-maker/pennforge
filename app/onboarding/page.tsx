@@ -27,6 +27,8 @@ export default function OnboardingPage() {
     scheduling: "",
     transferRules: "",
     messageDestination: "",
+    heardAbout: "",
+    referredBy: "",
     notes: "",
     company_website: "", // honeypot — must stay empty
   });
@@ -258,6 +260,30 @@ export default function OnboardingPage() {
               <label className={labelClass} htmlFor="messageDestination">Where should call summaries go? *</label>
               <input className={inputClass} id="messageDestination" name="messageDestination" required placeholder="Name + phone and/or email for summaries" value={values.messageDestination} onChange={set("messageDestination")} />
             </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-slate-100">How did you find us?</h2>
+          <p className="mt-1 text-sm text-slate-400">Optional — it helps us know what&apos;s working.</p>
+          <div className="mt-3 space-y-4">
+            <div>
+              <label className={labelClass} htmlFor="heardAbout">How did you hear about PennForge?</label>
+              <select className={inputClass} id="heardAbout" name="heardAbout" value={values.heardAbout} onChange={set("heardAbout")}>
+                <option value="">Choose one…</option>
+                <option>Google search</option>
+                <option>Facebook</option>
+                <option>Referred by someone</option>
+                <option>Word of mouth</option>
+                <option>Other</option>
+              </select>
+            </div>
+            {values.heardAbout === "Referred by someone" ? (
+              <div>
+                <label className={labelClass} htmlFor="referredBy">Who referred you?</label>
+                <input className={inputClass} id="referredBy" name="referredBy" placeholder="Name of the person or business who sent you" value={values.referredBy} onChange={set("referredBy")} />
+              </div>
+            ) : null}
           </div>
         </section>
 
