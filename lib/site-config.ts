@@ -12,7 +12,7 @@
 // ---------------------------------------------------------------------------
 export const brand = {
   name: "PennForge",
-  tagline: "Your business is always answering.",
+  tagline: "You do your job. We handle the phones.",
   // Logo is an inline SVG component (components/Logo.tsx) so it can be
   // swapped for the official logo later without touching layout.
 } as const;
