@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Mail, Phone } from "lucide-react";
 import { brand, contact, legal, navLinks } from "@/lib/site-config";
 import { Logo } from "./Logo";
+import { goldbackBadge } from "@/lib/goldback-badge";
 
 /**
  * Section L — Footer. No invented address. Legal links are placeholders
@@ -39,6 +40,21 @@ export function Footer() {
                 {contact.phone}
               </a>
             </div>
+            <a
+              href="https://www.goldback.com/pay-with-goldbacks/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-md bg-white p-1.5"
+              aria-label="We accept Goldback — learn more at goldback.com"
+            >
+              <img
+                src={goldbackBadge}
+                alt="We accept Goldback"
+                width={168}
+                height={76}
+                className="h-auto w-[168px]"
+              />
+            </a>
           </div>
 
           <nav aria-label="Product">
