@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Archivo, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -18,7 +19,7 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const title = "PennForge — AI Receptionist for Contractors | Never Miss Another Call";
+const title = "PennForge - AI Receptionist for Contractors | Never Miss Another Call";
 const description =
   "PennForge is the AI-powered phone receptionist for contractors and home-service businesses. 24/7 call answering, lead capture, and appointment scheduling. Turn missed calls into booked jobs.";
 
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 
 /**
  * Structured data: Organization + Product/Offer.
- * No review/aggregate-rating schema — PennForge is pre-launch and we do
+ * No review/aggregate-rating schema - PennForge is pre-launch and we do
  * not invent ratings, reviews, or customer counts.
  */
 function JsonLd() {
@@ -81,7 +82,7 @@ function JsonLd() {
           "@type": "Offer",
           price: pricing.monthlyPrice,
           priceCurrency: "USD",
-          description: `$${pricing.monthlyPrice}/month + $${pricing.setupFee} one-time setup. ${pricing.includedMinutes} AI minutes included; $${pricing.overageRate.toFixed(2)}/min overage.`,
+          description: `${pricing.monthlyPrice}/month + $${pricing.setupFee} one-time setup. ${pricing.includedMinutes} AI minutes included; $${pricing.overageRate.toFixed(2)}/min overage.`,
         },
       },
     ],
@@ -108,6 +109,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script id="datamoon-pixel" strategy="afterInteractive">
+          {`(function(s, p, i, c, e) {
+    s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
+    s[e].l = 1 * new Date();
+    var t = new Date().getTime();
+    var k = c.createElement("script"), a = c.getElementsByTagName("script")[0];
+    k.async = 1, k.src = p + "?request_id=" + i + "&t=" + t, a.parentNode.insertBefore(k, a);
+    s.pixelClientId = i;
+  })(window, "https://app.datamoon.com/script", "pennforgeapp", document, "script");`}
+        </Script>
       </body>
     </html>
   );
