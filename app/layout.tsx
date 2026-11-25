@@ -21,7 +21,7 @@ const archivo = Archivo({
 
 const title = "PennForge - AI Receptionist for Contractors | Never Miss Another Call";
 const description =
-  "PennForge is the AI-powered phone receptionist for contractors and home-service businesses. 24/7 call answering, lead capture, and appointment scheduling. Turn missed calls into booked jobs.";
+  "PennForge is the AI-powered phone receptionist for contractors and home-service businesses. 24/7 call answering, lead capture, and message taking. Never miss another call.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(seo.canonicalUrl),

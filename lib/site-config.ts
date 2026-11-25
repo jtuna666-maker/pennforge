@@ -116,17 +116,17 @@ export const howItWorksSteps = [
   {
     number: "03",
     title: "Details Are Captured",
-    body: "PennForge gathers contact information, service needs, and relevant appointment details.",
+    body: "PennForge gathers contact information, service needs, and the caller’s message.",
   },
   {
     number: "04",
     title: "You Get the Lead",
-    body: "The information is sent to you, with appointment requests or bookings handled according to your configuration.",
+    body: "The message is sent straight to you, so you can call back with the details in hand.",
   },
 ] as const;
 
 export const howItWorksNote =
-  "Available call-routing and scheduling features depend on the selected configuration and integrations.";
+  "Call routing and message delivery are set up during onboarding to match how you work.";
 
 // ---------------------------------------------------------------------------
 // Interactive demo preview (Section E)
@@ -176,8 +176,8 @@ export const features = [
   },
   {
     icon: "CalendarCheck",
-    title: "Appointment Requests & Scheduling",
-    body: "PennForge can take appointment requests and handle bookings per your configuration.",
+    title: "Message Taking",
+    body: "Every caller can leave a detailed message — name, number, and what they need — sent straight to you so you can call back.",
   },
   {
     icon: "BookOpen",
@@ -228,7 +228,7 @@ export const industries = [
   {
     icon: "Leaf",
     name: "Landscaping",
-    useCase: "Book estimates and seasonal cleanups while you’re out on the mower.",
+    useCase: "Take estimate requests and cleanup calls while you’re out on the mower.",
   },
   {
     icon: "HardHat",
@@ -252,7 +252,7 @@ export const pricing = {
     "500 AI call minutes per month",
     "Custom business knowledge base",
     "Lead information capture",
-    "Appointment request handling",
+    "Warm transfer for urgent calls",
     "Call summaries and notifications",
     "Custom greeting wording and basic call routing",
   ] as string[],
@@ -283,7 +283,7 @@ export const whyPennForge = {
     },
     {
       title: "Lead info stays organized",
-      body: "Names, needs, and appointment details captured the same way, every time.",
+      body: "Names, needs, and messages captured the same way, every time.",
     },
   ],
 } as const;
@@ -303,7 +303,7 @@ export const faqs = [
   },
   {
     q: "Can it schedule appointments?",
-    a: "PennForge can take appointment requests and handle bookings according to your configuration. The exact scheduling behavior is set up during onboarding to match how you run your calendar.",
+    a: "Not yet. Right now Lucy answers the call, takes the message — including any time the caller asks for — and sends it to you, so you call back and set the time yourself.",
   },
   {
     q: "What happens if a customer needs to speak with a real person?",
