@@ -65,14 +65,14 @@ export const ctaLabels = {
 // ---------------------------------------------------------------------------
 export const hero = {
   eyebrow: "AI-Powered Receptionist for Contractors",
-  headlineTop: "TURN MISSED CALLS INTO",
-  headlineAccent: "BOOKED JOBS.",
+  headlineTop: "EVERY CALL ANSWERED.",
+  headlineAccent: "EVERY MESSAGE TAKEN.",
   subcopy:
-    "You’re busy getting the job done. PennForge handles the phone — answering customer calls, capturing new leads, and helping schedule appointments, 24/7.",
+    "You’re busy getting the job done. PennForge handles the phone — Lucy answers your calls and takes the message, 24/7, so no customer goes unanswered.",
   benefits: [
     "Answer Calls 24/7",
     "Capture New Leads",
-    "Book Jobs",
+    "Take Messages",
     "Grow Revenue",
   ] as string[],
 } as const;
