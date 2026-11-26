@@ -56,7 +56,7 @@ export function DemoPreview() {
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={contact.phoneHref}
-              className="inline-flex items-center gap-2 rounded-xl bg-forge-500 px-7 py-3.5 text-base font-semibold text-white shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400"
+              className="inline-flex items-center gap-2 rounded-xl bg-forge-500 px-7 py-3.5 text-base font-semibold text-slate-900 shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400"
             >
               <Phone size={18} aria-hidden="true" />
               Call Lucy now — {contact.phone}
@@ -82,3 +82,4 @@ export function DemoPreview() {
     </section>
   );
 }
+

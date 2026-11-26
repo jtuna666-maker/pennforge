@@ -177,7 +177,7 @@ export function DemoRequestModal() {
             <button
               type="button"
               onClick={handleClose}
-              className="mt-6 rounded-xl bg-forge-500 px-6 py-3 text-sm font-semibold text-white hover:bg-forge-400"
+              className="mt-6 rounded-xl bg-forge-500 px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-forge-400"
             >
               Done
             </button>
@@ -383,7 +383,7 @@ export function DemoRequestModal() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-forge-500 px-6 py-3.5 text-base font-semibold text-white shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400 disabled:cursor-not-allowed disabled:opacity-70"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-forge-500 px-6 py-3.5 text-base font-semibold text-slate-900 shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {status === "submitting" ? (
                   <>
@@ -404,3 +404,4 @@ export function DemoRequestModal() {
     </div>
   );
 }
+

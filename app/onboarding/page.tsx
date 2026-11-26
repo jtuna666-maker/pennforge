@@ -88,7 +88,7 @@ export default function OnboardingPage() {
           href={STRIPE_PAYMENT_LINK_HREF}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-block rounded-md bg-orange-500 px-6 py-3 font-semibold text-white"
+          className="mt-6 inline-block rounded-md bg-orange-500 px-6 py-3 font-semibold text-slate-900"
         >
           Pay $99 setup + $299/month with Stripe
         </a>
@@ -327,7 +327,7 @@ export default function OnboardingPage() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-white disabled:opacity-60"
+          className="rounded-md bg-orange-500 px-6 py-3 font-semibold text-slate-900 disabled:opacity-60"
         >
           {status === "submitting" ? "Sending…" : "Submit onboarding details"}
         </button>
@@ -341,3 +341,4 @@ export default function OnboardingPage() {
     </main>
   );
 }
+

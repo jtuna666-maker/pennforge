@@ -83,7 +83,7 @@ export function Pricing() {
               <button
                 type="button"
                 onClick={openDemo}
-                className="mt-8 w-full rounded-xl bg-forge-500 px-7 py-4 text-base font-semibold text-white shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400"
+                className="mt-8 w-full rounded-xl bg-forge-500 px-7 py-4 text-base font-semibold text-slate-900 shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400"
               >
                 {ctaLabels.bookFreeDemo}
               </button>
@@ -98,3 +98,4 @@ export function Pricing() {
     </section>
   );
 }
+

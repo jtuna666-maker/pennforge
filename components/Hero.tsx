@@ -74,7 +74,7 @@ export function Hero() {
             <button
               type="button"
               onClick={openDemo}
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-forge-500 px-7 py-3.5 text-base font-semibold text-white shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400 hover:shadow-forge-400/30"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-forge-500 px-7 py-3.5 text-base font-semibold text-slate-900 shadow-xl shadow-forge-500/25 transition-all hover:bg-forge-400 hover:shadow-forge-400/30"
             >
               {ctaLabels.bookFreeDemo}
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-0.5" />
@@ -112,3 +112,4 @@ export function Hero() {
     </section>
   );
 }
+

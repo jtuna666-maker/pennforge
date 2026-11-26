@@ -33,7 +33,7 @@ export function FinalCta() {
             <button
               type="button"
               onClick={openDemo}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-forge-500 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-forge-500/30 transition-all hover:bg-forge-400 sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-forge-500 px-8 py-4 text-base font-semibold text-slate-900 shadow-2xl shadow-forge-500/30 transition-all hover:bg-forge-400 sm:w-auto"
             >
               {ctaLabels.bookYourFreeDemo}
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-0.5" />
@@ -51,3 +51,4 @@ export function FinalCta() {
     </section>
   );
 }
+

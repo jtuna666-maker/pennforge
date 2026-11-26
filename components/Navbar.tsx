@@ -75,7 +75,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={openDemo}
-            className="rounded-lg bg-forge-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-forge-500/25 transition-all hover:bg-forge-400 hover:shadow-forge-400/30"
+            className="rounded-lg bg-forge-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-forge-500/25 transition-all hover:bg-forge-400 hover:shadow-forge-400/30"
           >
             {ctaLabels.bookDemo}
           </button>
@@ -116,7 +116,7 @@ export function Navbar() {
                   setMenuOpen(false);
                   openDemo();
                 }}
-                className="w-full rounded-lg bg-forge-500 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-forge-500/25 transition-colors hover:bg-forge-400"
+                className="w-full rounded-lg bg-forge-500 px-5 py-3 text-base font-semibold text-slate-900 shadow-lg shadow-forge-500/25 transition-colors hover:bg-forge-400"
               >
                 {ctaLabels.bookDemo}
               </button>
@@ -127,3 +127,4 @@ export function Navbar() {
     </header>
   );
 }
+
